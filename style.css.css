@@ -1,0 +1,284 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: lightblue;
+    color: #202b38;
+}
+
+header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 22px 12px;
+}
+
+header h1 {
+    margin: 0  7px;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+.panel {
+    background: white;
+    padding: 22px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.intersection {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #dce5ed;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* TRAFFIC LIGHT */
+
+.traffic-light {
+    width: 65px;
+    flex-shrink: 0;
+    background: #222;
+    padding: 9px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 7px #777;
+}
+
+.light {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #555;
+    opacity: 0.35;
+    border: 2px solid #111;
+}
+
+.light.active {
+    opacity: 1;
+    box-shadow: 0 0 12px currentColor;
+}
+
+.red {
+    background: #ff3030;
+    color: #ff3030;
+}
+
+.yellow {
+    background: #ffd52a;
+    color: #ffd52a;
+}
+
+.green {
+    background: #22c55e;
+    color: #22c55e;
+}
+
+/* ROAD */
+
+.road {
+    position: relative;
+    height: 145px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #42474d;
+    border-top: 5px solid #b8bec5;
+    border-bottom: 5px solid #b8bec5;
+}
+
+.lane-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-top: 4px dashed white;
+    transform: translateY(-50%);
+}
+
+.vehicle {
+    position: absolute;
+    left: 5px;
+    z-index: 2;
+    font-size: 34px;
+    line-height: 1;
+    transition: left 3s linear;
+}
+
+.car {
+    top: 18px;
+}
+
+.motorcycle {
+    bottom: 17px;
+    font-size: 31px;
+}
+
+/* BUTTONS */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 4px 9px #999;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.stop {
+    background: red;
+}
+
+.wait {
+    background: yellow;
+}
+
+.go {
+    background: green;
+}
+
+.reset {
+    background: gray;
+}
+
+.register {
+    width: 100%;
+    margin-top: 8px;
+    background: #17365d;
+}
+
+#trafficMessage {
+    text-align: center;
+    margin: 17px 0 0;
+    color: red;
+}
+
+/* REGISTRATION FORM */
+
+form {
+    display: grid;
+    gap: 9px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b9c3ce;
+    border-radius: 6px;
+    font: inherit;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #7aa6d8;
+    border-color: black;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 7px;
+    background: white;
+    display: none;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: black;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 520px) {
+
+    main {
+        width: 96%;
+        margin: 14px auto;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .intersection {
+        gap: 9px;
+        padding: 9px;
+    }
+
+    .traffic-light {
+        width: 52px;
+        padding: 7px;
+    }
+
+    .light {
+        width: 29px;
+        height: 29px;
+    }
+
+    .road {
+        height: 125px;
+    }
+
+    .vehicle {
+        font-size: 28px;
+    }
+
+    .motorcycle {
+        font-size: 26px;
+    }
+
+    button {
+        flex: 1 1 40%;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Traffic Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mini Traffic Simulator</h1>
+        <p>Learn how traffic lights keep vehicles safe.</p>
+    </header>
+
+    <main>
+
+        <section class="panel">
+            <h2>Traffic Intersection</h2>
+
+            <div class="intersection">
+
+                <div class="traffic-light">
+                    <div id="red" class="light red"></div>
+                    <div id="yellow" class="light yellow"></div>
+                    <div id="green" class="light green"></div>
+                </div>
+
+                <div class="road">
+                    <div class="lane-line"></div>
+
+                    <div id="car1" class="vehicle car">🚗</div>
+                    <div id="car2" class="vehicle motorcycle">🏍️</div>
+
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="stopButton" class="stop">STOP</button>
+                <button id="waitButton" class="wait">WAIT</button>
+                <button id="goButton" class="go">GO</button>
+                <button id="resetButton" class="reset">RESET</button>
+            </div>
+
+            <h3 id="trafficMessage">STOP! Red Light</h3>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Vehicle Registration Form</h2>
+
+            <form id="vehicleForm">
+
+                <label for="driver">Driver's Name</label>
+                <input type="text" id="driver" placeholder="Enter driver's name" required>
+
+                <label for="type">Vehicle Type</label>
+                <select id="type" required>
+                    <option value="">Select vehicle type</option>
+                    <option>Car</option>
+                    <option>Motorcycle</option>
+                    <option>Bus</option>
+                    <option>Truck</option>
+                </select>
+
+                <label for="destination">Destination</label>
+                <select id="destination" required>
+                    <option value="">Select destination</option>
+                    <option>North</option>
+                    <option>South</option>
+                    <option>East</option>
+                    <option>West</option>
+                </select>
+
+                <label for="purpose">Purpose of Travel</label>
+                <select id="purpose" required>
+                    <option value="">Select purpose</option>
+                    <option>Personal</option>
+                    <option>School</option>
+                    <option>Business</option>
+                </select>
+
+                <button type="submit" class="register">
+                    REGISTER VEHICLE
+                </button>
+
+            </form>
+
+            <div id="registrationResult" class="result"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+    Mini Traffic Simulator Project
+    </footer>
+    
+    <footer>
+    <small>Created by: Zeth Gonzales & Gino Viray | Grade 8 Programmer</small>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
